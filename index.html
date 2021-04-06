@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <style>
 body, html {
   height: 100%;
@@ -13,19 +14,13 @@ body, html {
   background-size: cover;
   position: relative;
   color: white;
-  font-family: "Jira", Courier, monospace;
+  font-family: Courier;
   font-size: 25px;
 }
 
 .topleft {
   position: absolute;
   top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
   left: 16px;
 }
 
@@ -42,7 +37,32 @@ hr {
   width: 40%;
 }
 </style>
+
 <body>
+
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="483725465312259">
+      </div>
 
 <div class="bgimg">
   <div class="topleft">
@@ -87,4 +107,5 @@ var countdownfunction = setInterval(function() {
 </script>
 
 </body>
+
 </html>
